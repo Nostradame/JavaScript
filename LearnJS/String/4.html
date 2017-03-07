@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Выделить число</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		Есть стоимость в виде строки: "$120". То есть, первым идёт знак валюты, а затем – число.
+		Создайте функцию extractCurrencyValue(str), которая будет из такой строки выделять число-значение, в данном случае 120.
+		*/
+
+		var extractCurrencyValue = function(str) {
+			return parseInt(str.slice(1));
+		}
+
+		document.write(extractCurrencyValue("$12"));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
