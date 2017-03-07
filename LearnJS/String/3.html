@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Усечение строки</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		Создайте функцию truncate(str, maxlength), которая проверяет длину строки str, и если она превосходит maxlength
+		– заменяет конец str на "...", так чтобы ее длина стала равна maxlength.
+		Результатом функции должна быть (при необходимости) усечённая строка.
+
+		Например:
+		truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) = "Вот, что мне хоте..."
+		truncate("Всем привет!", 20) = "Всем привет!"
+		Эта функция имеет применение в жизни. Она используется, чтобы усекать слишком длинные темы сообщений.
+		*/
+
+		function truncate(str, maxlength) {
+			return str.length > maxlength ? str.slice(0, maxlength - 3) + "..." : str;
+		}
+
+		alert(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20) === "Вот, что мне хоте...");
+		alert(truncate("Всем привет!", 20) === "Всем привет!");
+		var str = truncate("What I'd like to tell on this topic is:", 20);
+		alert(truncate("What I'd like to tell on this topic is:", 20) === "What I'd like to ...");
+	</script>
+</head>
+<body>
+
+</body>
+</html>
