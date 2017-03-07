@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Первый объект</title>
+	<meta charset="utf-8"/>
+
+	<script>
+		/*
+		Мини-задача на синтаксис объектов. Напишите код, по строке на каждое действие.
+	
+		1. Создайте пустой объект user.
+		2. Добавьте свойство name со значением Вася.
+		3. Добавьте свойство surname со значением Петров.
+		4. Поменяйте значение name на Сергей.
+		5. Удалите свойство name из объекта.
+		*/
+
+		var user = {};
+		user.name = "Вася";
+		user.surname = "Петров";
+		user.name = "Сергей";
+
+		document.write("Name \"" + user.name + "\", Surname \"" + user.surname + "\" <br />");
+		document.write("name in user - " + ("name" in user) + "<br />");
+		document.write("surname in user - " + ("surname" in user) + "<br />");
+
+		delete user["name"];
+		document.write("Name \"" + user.name + "\", Surname \"" + user.surname + "\" <br />");
+		document.write("name in user - " + ("name" in user) + "<br />");
+		document.write("surname in user - " + ("surname" in user) + "<br />");
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
