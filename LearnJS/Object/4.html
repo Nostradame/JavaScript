@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Свойство с наибольшим значением</title>
+	<meta charset="utf-8" />
+	<script>
+		/*
+		Есть объект salaries с зарплатами. Напишите код, который выведет имя сотрудника, у которого самая большая зарплата.
+		Если объект пустой, то пусть он выводит «нет сотрудников».
+		
+		Например:
+		"use strict";
+		
+		var salaries = {
+			"Вася": 100,
+			"Петя": 300,
+			"Даша": 250
+		};
+		
+		// ... ваш код выведет "Петя"
+		*/
+		var getNameStaffWithMaxSalary = function (data) {
+			// первым пробегом осуществляем выявление максимальной заработной платы и имени персонала, соответственно, если с максимальной
+			// заработной платой, окажутся несколько человек, выведется имя первого (из-за >)
+			var maxSalary = 0;
+			var name;
+			for (var salary in data) {
+				if (data[salary] > maxSalary) {
+					maxSalary = data[salary];
+					name = salary;
+				}
+			}
+
+			return name === undefined ? "Нет сотрудников" : name;
+		}
+
+		var salaries = {
+			"Вася": 100,
+			"Петя": 300,
+			"Даша": 250,
+			"Таня": 1000,
+			"Денис": 1000
+		};
+
+		document.write(getNameStaffWithMaxSalary(salaries) + "<br />");
+		document.write(getNameStaffWithMaxSalary({}) + "<br />");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

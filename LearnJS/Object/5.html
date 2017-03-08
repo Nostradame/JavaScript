@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Умножьте численные свойства на 2</title>
+	<meta charset="utf-8" />
+	<script>
+		/*
+		Создайте функцию multiplyNumeric, которая получает объект и умножает все численные свойства на 2. Например:
+		
+		// до вызова
+		var menu = {
+			width: 200,
+			height: 300,
+			title: "My menu"
+		};
+
+		multiplyNumeric(menu);
+		
+		// после вызова
+		menu = {
+			  width: 400,
+			  height: 600,
+			  title: "My menu"
+		};
+		*/
+
+		var menu = {
+			width: 200,
+			height: 300,
+			title: "My menu"
+		};
+
+		var printMenu = function (menu) {
+			if (menu == undefined) {
+				return "";
+			}
+
+			document.write("width: " + menu.width + "<br />"
+				+ "height: " + menu.height + "<br />"
+				+ "title: " + menu.title + "<br />"
+				+ "<hr />");
+		}
+
+		function isNumeric(n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
+		}
+
+		var multiplyNumeric = function (menu) {
+			for (var property in menu) {
+				if (isNumeric(menu[property])) {
+					menu[property] *= 2;
+				}
+			}
+		}
+
+		printMenu(menu);
+		multiplyNumeric(menu);
+		printMenu(menu);
+		printMenu(null);
+		printMenu({});
+	</script>
+</head>
+<body>
+
+</body>
+</html>
