@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Определите, пуст ли объект</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		Создайте функцию isEmpty(obj), которая возвращает true, если в объекте нет свойств и false – если хоть одно свойство есть.
+		Работать должно так:
+
+		var schedule = {};
+		alert( isEmpty(schedule) ); // true
+		schedule["8:30"] = "подъём";
+		alert( isEmpty(schedule) ); // false
+		*/
+
+		function isEmpty(obj) {
+			return !Object.keys(obj).length > 0;
+		}
+
+		var schedule = {};
+		alert(isEmpty(schedule)); // true
+		schedule["8:30"] = "подъём";
+		alert(isEmpty(schedule)); // false
+	</script>
+</head>
+<body>
+
+</body>
+</html>
