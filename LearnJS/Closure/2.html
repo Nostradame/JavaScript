@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Сумма через замыкание</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		Напишите функцию sum, которая работает так: sum(a)(b) = a+b.
+		Да, именно так, через двойные скобки (это не опечатка). Например:
+		sum(1)(2) = 3
+		sum(5)(-1) = 4
+		*/
+
+		function sum(a) {
+			return function(b) {
+				return a + b;
+			}
+		}
+
+		document.write("sum(1)(2) = " + sum(1)(2) + "<br />");
+		document.write("sum(5)(-1) = " + sum(5)(-1) + "<br />");
+	</script>
+</head>
+<body>
+
+</body>
+</html>
