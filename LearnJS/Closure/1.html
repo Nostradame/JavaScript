@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Свойства функции</title>
+	<meta charset="utf-8" />
+	
+	<script>
+		function makeCounter() {
+			function counter() {
+				return counter.currentCount++;
+			};
+			counter.currentCount = 1;
+
+			return counter;
+		}
+
+		var counter = makeCounter();
+
+		var counter2 = makeCounter();
+
+		alert(counter()); // 1
+		alert(counter()); // 2
+		alert(counter()); // 3
+
+		alert(counter2()); // 1, счётчики независимы
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
