@@ -27,6 +27,10 @@
 				data += value;
 			}
 
+			buffer.clear = function() {
+				data = "";
+			}
+
 			return buffer;
 		}
 
@@ -40,7 +44,7 @@
 		// получить текущее значение
 		alert(buffer()); // Замыкания Использовать Нужно!
 
-		document.write("<br />");
+		document.write("<hr />");
 
 		var buffer = makeBuffer();
 		buffer(0);
@@ -48,6 +52,18 @@
 		buffer(0);
 
 		alert(buffer()); // '010'
+
+		document.write("<hr />");
+
+		var buffer = makeBuffer();
+
+		buffer("Тест");
+		buffer(" тебя не съест ");
+		alert(buffer()); // Тест тебя не съест
+
+		buffer.clear();
+
+		alert(buffer()); // ""
 	</script>
 </head>
 <body>
