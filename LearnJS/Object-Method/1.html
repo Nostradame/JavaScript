@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Создайте калькулятор</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		Создайте объект calculator с тремя методами:
+
+		read() запрашивает prompt два значения и сохраняет их как свойства объекта
+		sum() возвращает сумму этих двух значений
+		mul() возвращает произведение этих двух значений
+		*/
+
+		var calculator = {
+			a: 0,
+			b: 0,
+
+			read: function() {
+				this.a = prompt("Введите a", "0");
+				this.b = prompt("Введите b", "0");
+			},
+
+			sum: function() {
+				return parseInt(this.a) + parseInt(this.b);
+			},
+
+			mul: function() {
+				return parseInt(this.a) * parseInt(this.b);
+			}
+		};
+
+		// проверка
+		calculator.read();
+		alert(calculator.sum());
+		alert(calculator.mul());
+	</script>
+</head>
+<body>
+
+</body>
+</html>
