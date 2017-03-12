@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Простая функция конструктор</title>
+	<meta charset="utf-8"/>
+	<script>
+		function Car(model) {
+			this.model = model;
+			this.enginesType = "gasoline";
+
+			var countWheels = 4;
+
+			this.getCountWheels = function() {
+				return countWheels;
+			};
+		};
+
+		var car = new Car("Lada Vesta");
+	</script>
+</head>
+<body>
+
+</body>
+</html>
