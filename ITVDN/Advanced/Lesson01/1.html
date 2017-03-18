@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Задание 1</title>
+	<meta charset="utf-8"/>
+	<script src="/Commons/visual.js" type="text/javascript"></script>
+	<script>
+		/*
+		Создайте функцию конструктор, которая создает объект со свойством экземпляра, свойством
+		функции-конструктора, с методом экземпляра и методом функции-конструктора имена выберите произвольно.
+		*/
+		var House = function(address) {
+			this.address = address;
+			this.getAddress = function() {
+				return this.address;
+			}
+		}
+
+		House.flors = 17;
+		House.getFlors = function() {
+			return this.flors;
+		}
+
+		var house1 = new House("Moscow city, Aviatorov street, 100/1");
+		dw(wr(house1, "house1"));
+
+		var house2 = new House("Volgodrad city, Kachincev street, 59");
+		dw(wr(house2, "house2"));
+
+		dw("Вывод значения свойсва функции - конструктора:");
+		dw("House.flors = " + House.getFlors());
+
+		dw("Проверка отображения примитива");
+		dw(wr(1, "primitive"));
+	</script>
+</head>
+<body>
+
+</body>
+</html>
