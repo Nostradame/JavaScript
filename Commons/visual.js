@@ -1,8 +1,9 @@
 ﻿;
 (function () {
-	this.nl = "<br />";
+	this.br = "<br />";
+	this.hr = "<hr />";
 
-	this.wr = function (obj, objName) {
+	this.wr = function wrP(obj, objName) {
 		var str = "";
 
 		if (typeof objName == "string") {
@@ -10,25 +11,27 @@
 		}
 
 		if (typeof obj != "object") {
-			return str += obj.toString() + ";" + this.nl;
+			return objName != undefined
+				? str += obj.toString() + ";" + this.br
+				: obj.toString();
 		}
 
-		str += "{" + this.nl;
+		str += "{" + this.br;
 		for (var prop in obj) {
-			str += prop + "(" + (typeof obj[prop]) + ")" + ": " + obj[prop] + "," + this.nl;
+			str += prop + "(" + (typeof obj[prop]) + ")" + ": " + wrP(obj[prop]) + "," + this.br;
 		}
 
 		var pos;
 
-		if((pos = str.lastIndexOf(",")) > 0) {
+		if ((pos = str.lastIndexOf(",")) > 0) {
 			str = str.slice(0, pos);
-			str += this.nl;
+			str += this.br;
 		};
 
 		return str += "};";
-	}
+	};
 
 	this.dw = function(str) {
-		return document.write(str + this.nl);
-	}
+		return document.write(str + this.br);
+	};
 })();
