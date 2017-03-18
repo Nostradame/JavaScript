@@ -27,11 +27,11 @@
 		};
 
 		Human.sortByAgeDesc = function(hum1, hum2) {
-			return hum1.Age - hum2.Age;
+			return hum2.Age - hum1.Age;
 		};
 
 		Human.sortByAgeAsc = function(hum1, hum2) {
-			return hum2.Age - hum1.Age;
+			return hum1.Age - hum2.Age;
 		};
 
 		var denis = new Human("Denis");
@@ -64,8 +64,16 @@
 		dw(hr);
 
 		dw("Сортировка по убыванию:");
+		var humansDesc = humans.sort(Human.sortByAgeDesc);
+		dw(hr);
+		dw(wr(humansDesc, "humansDesc"));
+		dw(hr);
 
 		dw("Сортировка по возрастанию:");
+		var humansAsc = humans.sort(Human.sortByAgeAsc);
+		dw(hr);
+		dw(wr(humansAsc, "humansAsc"));
+		dw(hr);
 	</script>
 </head>
 <body>
