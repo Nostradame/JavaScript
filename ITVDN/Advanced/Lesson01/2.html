@@ -5,34 +5,13 @@
 	<title>Задание 2</title>
 	<meta charset="utf-8"/>
 	<script src="/Commons/visual.js" type="text/javascript"></script>
+	<script src ="Human.js" type="text/javascript"></script>
 	<script>
 		/*
 		Разработайте функцию-конструктор, которая будет создавать объект Human(человек) создайте массив
 		объектов и реализуйте функцию, которая будет сортировать элементы массива по значению свойства Age
 		по возрастанию или по убыванию. 
 		*/
-
-		function Human(name) {
-			var age = 0;
-			this.Name = name;
-			Object.defineProperty(this, "Age", {
-				get: function() {
-					return age;
-				},
-				set: function(value) {
-					age = value;
-				},
-				enumerable: true
-			});
-		};
-
-		Human.sortByAgeDesc = function(hum1, hum2) {
-			return hum2.Age - hum1.Age;
-		};
-
-		Human.sortByAgeAsc = function(hum1, hum2) {
-			return hum1.Age - hum2.Age;
-		};
 
 		var denis = new Human("Denis");
 		denis.Age = 28;
