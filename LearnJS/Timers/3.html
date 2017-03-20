@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Что выведет setTimeout?</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		В коде ниже запланирован запуск setTimeout, а затем запущена тяжёлая функция hardWork, выполнение
+		которой занимает более долгое время, чем интервал до срабатывания таймера.
+
+		Когда сработает setTimeout? Выберите нужный вариант:
+		
+		До выполнения hardWork.
+		Во время выполнения hardWork.
+		Сразу же по окончании hardWork.
+		Через 100 мс после окончания hardWork.
+		Что выведет alert в коде ниже?
+		*/
+
+		setTimeout(function () {
+			alert(i);
+		}, 100);
+
+		var i;
+
+		function hardWork() {
+			// время выполнения этого кода >100 мс, сам код неважен
+			for (i = 0; i < 1e8; i++) hardWork[i % 2] = i;
+		}
+
+		hardWork();
+	</script>
+</head>
+<body>
+
+</body>
+</html>
