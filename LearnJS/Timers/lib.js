@@ -50,3 +50,26 @@ function debounce(func, ms) {
 		}
 	}
 }
+
+function throttle(func, ms) {
+	var canExecute = true;
+	var context;
+	var args;
+	return function () {
+		context = this;
+		args = arguments;
+
+		if (canExecute) {
+			canExecute = false;
+			func.apply(context, args);
+			setTimeout(function() {
+				canExecute = true;
+				func.apply(context, args);
+				},
+				ms);
+		}
+		else {
+			console.log("Обновлены параметры, с которыми будет вызвана функция!");
+		}
+	}
+}
