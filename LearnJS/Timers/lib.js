@@ -6,7 +6,7 @@
 			clearInterval(timerId);
 			return;
 		}
-		},
+	},
 		100);
 };
 
@@ -27,22 +27,22 @@ function delay(func, ms) {
 		var args = arguments;
 		setTimeout(function () {
 			func.apply(context, args);
-			},
+		},
 			ms);
 	}
 };
 
 function debounce(func, ms) {
 	var canExecute = true;
-	return function() {
+	return function () {
 		var context = this;
 		var args = arguments;
 
 		if (canExecute) {
 			canExecute = false;
 			setTimeout(function () {
-					canExecute = true;
-				},
+				canExecute = true;
+			},
 				ms);
 			func.apply(context, args);
 		} else {
@@ -53,23 +53,28 @@ function debounce(func, ms) {
 
 function throttle(func, ms) {
 	var canExecute = true;
+	var timerId;
 	var context;
 	var args;
 	return function () {
 		context = this;
 		args = arguments;
 
-		if (canExecute) {
-			canExecute = false;
-			func.apply(context, args);
-			setTimeout(function() {
+		if (!canExecute)
+			return;
+
+		func.apply(context, args);
+		canExecute = false;
+
+		timerId = setInterval(function () {
+			if (!args) {
+				clearInterval(timerId);
 				canExecute = true;
-				func.apply(context, args);
-				},
+				return;
+			}
+			func.apply(context, args);
+			context = args = null;
+			},
 				ms);
-		}
-		else {
-			console.log("Обновлены параметры, с которыми будет вызвана функция!");
-		}
 	}
 }
