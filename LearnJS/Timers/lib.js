@@ -31,3 +31,22 @@ function delay(func, ms) {
 			ms);
 	}
 };
+
+function debounce(func, ms) {
+	var canExecute = true;
+	return function() {
+		var context = this;
+		var args = arguments;
+
+		if (canExecute) {
+			canExecute = false;
+			setTimeout(function () {
+					canExecute = true;
+				},
+				ms);
+			func.apply(context, args);
+		} else {
+			console.log("Выполнение возможно не чаще одного раза в " + (ms / 1000) + " cекунд.");
+		}
+	}
+}

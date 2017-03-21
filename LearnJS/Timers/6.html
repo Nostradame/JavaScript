@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Вызов не чаще чем в N миллисекунд</title>
+	<meta charset="utf-8" />
+	<script src="lib.js"></script>
+	<script>
+		/*
+		Напишите функцию debounce(f, ms), которая возвращает обёртку, которая передаёт вызов f не чаще, чем раз в ms миллисекунд.
+		«Лишние» вызовы игнорируются. Все аргументы и контекст – передаются.
+		*/
+
+		function f() {
+			console.log([].slice.apply(arguments).join(","));
+		}
+
+		var f = debounce(f, 1000);
+
+		f(1); // выполнится сразу же
+		f(2); // игнор
+
+		setTimeout( function() { f(3) }, 100); // игнор (прошло только 100 мс)
+		setTimeout( function() { f(4) }, 1100); // выполнится
+		setTimeout( function() { f(5) }, 1500); // игнор
+	</script>
+</head>
+<body>
+
+</body>
+</html>
