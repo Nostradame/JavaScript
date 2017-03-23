@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Добавить метод isRunning</title>
+	<meta charset="utf-8"/>
+	<script src="lib.js"></script>
+	<script>
+		/*
+		Из внешнего кода мы хотели бы иметь возможность понять – запущена кофеварка или нет.
+		Для этого добавьте кофеварке публичный метод isRunning(), который будет возвращать true, если она
+		запущена и false, если нет.
+		*/
+		var coffeeMachine = new CoffeeMachine(20000, 500);
+		coffeeMachine.setWaterAmount(100);
+
+		alert('До: ' + coffeeMachine.isRunning()); // До: false
+
+		coffeeMachine.run();
+		alert('В процессе: ' + coffeeMachine.isRunning()); // В процессе: true
+
+		coffeeMachine.setOnReady(function () {
+			alert("После: " + coffeeMachine.isRunning()); // После: false
+		});
+	</script>
+</head>
+<body>
+
+</body>
+</html>

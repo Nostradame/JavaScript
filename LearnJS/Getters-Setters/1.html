@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Написать объект с геттерами и сеттерами</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		Напишите конструктор User для создания объектов:
+		С приватными свойствами имя firstName и фамилия surname.
+		С сеттерами для этих свойств.
+		С геттером getFullName(), который возвращает полное имя.
+		*/
+
+		function User() {
+			var firstName = "", surName = "";
+
+			this.setFirstName = function (value) {
+				firstName = value;
+			}
+
+			this.setSurname = function (value) {
+				surName = value;
+			}
+
+			this.getFullName = function() {
+				return firstName + " " + surName;
+			}
+		}
+
+		var user = new User();
+		user.setFirstName("Петя");
+		user.setSurname("Иванов");
+
+		alert(user.getFullName()); // Петя Иванов
+	</script>
+</head>
+<body>
+
+</body>
+</html>

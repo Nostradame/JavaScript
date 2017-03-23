@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Создать сеттер для onReady</title>
+	<meta charset="utf-8"/>
+	<script src="lib.js"></script>
+	<script>
+		/*
+		Обычно когда кофе готов, мы хотим что-то сделать, например выпить его.
+		Сейчас при готовности срабатывает функция onReady, но она жёстко задана в коде:
+		Создайте сеттер setOnReady, чтобы код снаружи мог назначить свой onReady, вот так:
+		*/
+		var coffeeMachine = new CoffeeMachine(20000, 500);
+		coffeeMachine.setWaterAmount(150);
+
+		coffeeMachine.setOnReady(function () {
+			var amount = coffeeMachine.getWaterAmount();
+			alert('Готов кофе: ' + amount + 'мл'); // Кофе готов: 150 мл
+		});
+
+		coffeeMachine.run();
+		/*
+		P.S. Значение onReady по умолчанию должно быть таким же, как и раньше.
+		P.P.S. Постарайтесь сделать так, чтобы setOnReady можно было вызвать не только до, но и после запуска
+		кофеварки, то есть чтобы функцию onReady можно было изменить в любой момент до её срабатывания.
+		*/
+	</script>
+</head>
+<body>
+
+</body>
+</html>
