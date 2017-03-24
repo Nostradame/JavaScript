@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Перепишите в виде класса</title>
+	<meta charset="utf-8"/>
+	<script>
+		/*
+		Есть класс CoffeeMachine, заданный в функциональном стиле.
+		Задача: переписать CoffeeMachine в виде класса с использованием прототипа.
+		P.S. При описании через прототипы локальные переменные недоступны методам, поэтому нужно будет
+		переделать их в защищённые свойства.
+		Исходный код:
+		*/
+		function CoffeeMachine(power) {
+			this._waterAmount = 0;
+			this._power = power;
+		}
+
+		CoffeeMachine.prototype.run = function () {
+			setTimeout(function () {
+				alert('Кофе готов!');
+			}, this.getTimeToBoil());
+		};
+
+		CoffeeMachine.prototype.getTimeToBoil = function () {
+			return this._waterAmount * CoffeeMachine.prototype.WATER_HEAT_CAPACITY * 80 / this._power;
+		}
+
+		CoffeeMachine.prototype.setWaterAmount = function (amount) {
+			this._waterAmount = amount;
+		};
+
+		CoffeeMachine.prototype.WATER_HEAT_CAPACITY = 4200;
+
+		var coffeeMachine = new CoffeeMachine(10000);
+		coffeeMachine.setWaterAmount(50);
+		coffeeMachine.run();
+	</script>
+</head>
+<body>
+
+</body>
+</html>
