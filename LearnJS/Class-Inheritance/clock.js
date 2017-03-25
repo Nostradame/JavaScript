@@ -27,5 +27,5 @@ Clock.prototype.stop = function () {
 
 Clock.prototype.start = function () {
 	this.render();
-	this.timer = setInterval(Clock.prototype.render.bind(this), 1000);
+	this._timer = setInterval(Clock.prototype.render.bind(this), 1000);
 }
