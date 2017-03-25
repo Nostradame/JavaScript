@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Унаследуйте от SyntaxError</title>
+	<meta charset="utf-8"/>
+	<script src="format-error.js"></script>
+	<script>
+		/*
+		Создайте ошибку FormatError, которая будет наследовать от встроенного класса SyntaxError.
+		Синтаксис для её создания – такой же, как обычно:
+		*/
+
+		var err = new FormatError("ошибка форматирования");
+
+		alert(err.message); // ошибка форматирования
+		alert(err.name); // FormatError
+		alert(err.stack); // стек на момент генерации ошибки
+
+		alert(err instanceof SyntaxError); // true
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
