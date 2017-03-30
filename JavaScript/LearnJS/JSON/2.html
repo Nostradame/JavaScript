@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Превратите объекты со ссылками в JSON</title>
+	<meta charset="utf-8" />
+	<script src ="/Commons/visual.js"></script>
+	<script>
+		/*
+		Превратите объект team из примера ниже в JSON:
+		*/
+
+		var leader = {
+			name: "Василий Иванович"
+		};
+
+		var soldier = {
+			name: "Петька"
+		};
+
+		// эти объекты ссылаются друг на друга!
+		leader.soldier = soldier.name;
+		soldier.leader = leader.name;
+
+		var team = [leader, soldier];
+
+		// 1. Может ли это сделать прямой вызов JSON.stringify(team)? Если нет, то почему?
+		// 2. Какой подход вы бы предложили для чтения и восстановления таких объектов?
+
+		var jsonStr = JSON.stringify(team);
+		dw(jsonStr);
+
+		var obj = JSON.parse(jsonStr);
+		dw(wr(obj, "obj"));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

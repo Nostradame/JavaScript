@@ -1,0 +1,14 @@
+{
+	"compileOnSave": true,
+	"compilerOptions": {
+		"target": "es5",
+		"outDir": "../JavaScript/Scripts",
+		"sourceMap": true,
+		"module": "es2015",
+		"declaration": true,
+		"lib": [
+			"es2015.promise",
+			"dom"
+		]
+	}
+}
