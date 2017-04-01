@@ -24,3 +24,21 @@ function download(urls) {
 
 	return asyncAction.then(() => results);
 }
+
+function download2(urls) {
+	return new Promise((resolved, rejected) => {
+		let results = [];
+		let asyncAction = Promise.resolve();
+
+		for (let url of urls) {
+			asyncAction = asyncAction.then(() => {
+				results.push(url);
+			});
+		}
+
+		return resolved(asyncAction
+			.then(() => {
+			return results;
+		}));
+	});
+}
