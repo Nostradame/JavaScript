@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Загрузить массив последовательно</title>
+	<meta charset="utf-8" />
+	<script src="/Scripts/lib.js"></script>
+	<script>
+		// Есть массив URL:
+		'use strict';
+
+		let urls = [
+			'user.json',
+			'guest.json'
+		];
+
+		/*
+		Напишите код, который все URL из этого массива загружает – один за другим (последовательно),
+		и сохраняет в результаты в массиве results, а потом выводит.
+		*/
+
+		download(urls)
+			.then(alert);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -7,3 +7,20 @@ function delay(ms) {
 		setTimeout(() => resolved(), ms);
 	});
 }
+
+/**
+ * Функция, которая последовательно загружает массив url'ов.
+ * @param urls {Array} Массив url'ов, которые необходимо загрузить
+ */
+function download(urls) {
+	let results = [];
+	let asyncAction = Promise.resolve();
+
+	for (let url of urls) {
+		asyncAction = asyncAction.then(() => {
+			results.push(url);
+		});
+	}
+
+	return asyncAction.then(() => results);
+}

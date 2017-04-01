@@ -23,6 +23,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "JavaScript", "JavaScript\",
 		VWDPort = "16598"
 		SlnRelativePath = "JavaScript\"
 	EndProjectSection
+	ProjectSection(ProjectDependencies) = postProject
+		{2748A20A-A806-4FF9-B37D-DF817C3EF718} = {2748A20A-A806-4FF9-B37D-DF817C3EF718}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibsJS", "LibsJS\LibsJS.csproj", "{2748A20A-A806-4FF9-B37D-DF817C3EF718}"
 EndProject
