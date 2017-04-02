@@ -34,6 +34,12 @@
 		
 		let sym = Symbol("MySymbol");
 		console.log(sym.toPrimitive);
+		
+		let s1 = Symbol("Symbol 1");
+		let s2 = Symbol("Symbol 2");
+		
+		alert(s1 === s2);
+		alert(s1.iterator === s2.iterator)
 		}
 	</script>
 </head>
