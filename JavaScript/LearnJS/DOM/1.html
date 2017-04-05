@@ -17,8 +17,8 @@
 	<script>
 		function getFirstElementByTagName(name) {
 			var rootElement = document.body;
-			for (var i = 0; i < rootElement.children; i++) {
-				if (rootElement.children[i] == name) {
+			for (var i = 0; i < rootElement.children.length; i++) {
+				if (rootElement.children[i].nodeName == name.toUpperCase()) {
 					return rootElement.children[i];
 				}
 			}
