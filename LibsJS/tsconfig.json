@@ -11,6 +11,8 @@
 			"dom",
 			"es6"
 		],
-		"noResolve": false
+		"noResolve": false,
+		"jsx": "react",
+		"watch": true
 	}
 }
