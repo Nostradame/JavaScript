@@ -1,0 +1,19 @@
+{
+  "name": "libjs",
+  "version": "1.0.0",
+  "description": "libjs",
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.0.3",
+    "webpack": "^2.3.3",
+    "typescript": "^2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nostradame",
+  "license": "ISC"
+}
