@@ -5,7 +5,7 @@ module.exports = {
 	},
 	watch: true,
 	resolve: {
-		extensions: [".webpack.js", ".ts", ".tsx"]
+		extensions: ['.js', '.jsx', '.webpack.js', '.ts', '.tsx']
 	},
 	module: {
 		loaders: [

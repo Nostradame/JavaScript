@@ -13,7 +13,6 @@
 		],
 		"noResolve": false,
 		"jsx": "react",
-		"watch": true,
 		"baseUrl": "./"
 	}
 }
