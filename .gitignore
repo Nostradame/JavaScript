@@ -4,3 +4,4 @@
 *.suo
 */Scripts/
 */node_modules/
+*.csproj.user
