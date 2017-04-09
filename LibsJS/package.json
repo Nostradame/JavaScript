@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "libjs",
   "dependencies": {
+    "@types/react": "^15.0.21",
+    "@types/react-dom": "^0.14.23",
     "react": "*",
     "react-dom": "*"
   },
