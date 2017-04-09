@@ -3,7 +3,6 @@ module.exports = {
 	output: {
 		filename: "../JavaScript/Scripts/bundle.js"
 	},
-	watch: true,
 	resolve: {
 		extensions: ['.js', '.jsx', '.webpack.js', '.ts', '.tsx']
 	},
