@@ -2,6 +2,5 @@
 /LibsJS/obj
 .vs/
 *.suo
-*/Scripts/
 */node_modules/
 *.csproj.user
