@@ -1,6 +1,4 @@
 ﻿mathfun = (function () {
-    debugger;
-
     return {
         sum: function () {
             var result = 0;
