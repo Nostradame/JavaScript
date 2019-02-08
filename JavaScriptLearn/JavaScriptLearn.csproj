@@ -69,6 +69,7 @@
     <Content Include="Chapter6.1.html" />
     <Content Include="packages.config" />
     <Content Include="Chapter5.4.html" />
+    <Content Include="Chapter6.3.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -79,6 +80,7 @@
   <ItemGroup>
     <Content Include="scripts\6.1.js" />
     <Content Include="scripts\5.4.js" />
+    <Content Include="scripts\6.3.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

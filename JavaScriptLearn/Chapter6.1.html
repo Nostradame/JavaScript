@@ -11,9 +11,33 @@
     </style>
 </head>
 <body>
+<h3>Калькулятор</h3>
+<span id="calculator"></span>
+    <h3>Чейнинг</h3>
+    <span id="chaining"></span>
 <script>
     var calculator = mathfun.calculator;
+    var calculatorElement = document.getElementById("calculator");
     calculator.read();
+    calculatorElement.innerHTML = "<span>" +
+        calculator.operand1 +
+        " + " +
+        calculator.operand2 +
+        " = <span class=\"result\">" +
+        calculator.sum() +
+        "</span></span><br/>" +
+        "<span>" +
+        calculator.operand1 +
+        " + " +
+        calculator.operand2 +
+        " = <span class=\"result\">" +
+        calculator.mul() +
+        "</span></span>";
+
+    var chainingElement = document.getElementById("chaining");
+    chainingElement.innerHTML = "<span>ladder.up().up().down().up().down().showStep() = <span class=\"result\">" +
+        mathfun.ladder.up().up().down().up().down().showStep() +
+        "</span></span>";
 </script>
 </body>
 </html>

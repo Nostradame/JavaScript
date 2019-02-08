@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Создание объектов через "new"</title>
+    <script src="/scripts/6.3.js" type="text/javascript"></script>
+    <style>
+        [class*=result] {
+            background-color: coral;
+            border: black 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <h3>Калькулятор</h3>
+    <span id="calculator"></span>
+
+    <h3>Accumulator при помощи конструктора</h3>
+    <span id="accumulator" class="result"></span>
+
+    <h3>Калькулятор</h3>
+    <span id="calculatorExt"></span>
+
+    <script>
+    var calculator = new mathfun.Calculator();
+    var calculatorElement = document.getElementById("calculator");
+    calculator.read();
+    calculatorElement.innerHTML = "<span>" +
+        calculator.operand1() +
+        " + " +
+        calculator.operand2() +
+        " = <span class=\"result\">" +
+        calculator.sum() +
+        "</span></span><br/>" +
+        "<span>" +
+        calculator.operand1() +
+        " + " +
+        calculator.operand2() +
+        " = <span class=\"result\">" +
+        calculator.mul() +
+        "</span></span>";
+
+    var accumulatorElement = document.getElementById("accumulator");
+    var accumulator =  new mathfun.Accumulator();
+    accumulator.read();
+    accumulator.read();
+    accumulatorElement.innerText = accumulator.value;
+
+    var calculatorExt = new mathfun.CalculatorExt();
+    calculatorExt.addMethod("*", function(a, b) { return a * b; });
+    calculatorExt.addMethod("/", function(a, b) { return a / b; })
+    calculatorExt.addMethod("**", function(a, b) { return Math.pow(a, b); })
+    var calculatorExtElement = document.getElementById("calculatorExt");
+    calculatorExtElement.innerHTML = "<span> 3 + 7 = <span class=\"result\">" +
+        calculatorExt.calculate("3 + 7") +
+        "</span></span><br/>" +
+        "<span> 2 ** 3 = <span class=\"result\">" +
+        calculatorExt.calculate("2 ** 3") +
+        "</span></span><br/>";
+
+    </script>
+</body>
+</html>
